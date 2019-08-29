@@ -72,6 +72,7 @@ export default class LoginScreen extends React.Component {
                     onChangeText={this.handleChange('phone')}
                 />
 
+
                 <TextInput
                     placeholder="nama"
                     style={styles.input}

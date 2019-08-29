@@ -45,6 +45,10 @@ export default class HomeScreen extends React.Component{
         this.props.navigation.navigate('Auth');
     }
 
+    _status = () => {
+        this.props.navigation.navigate('Status');
+    }    
+
     render(){
         return(
             <View style={styles.container}>
@@ -68,24 +72,30 @@ export default class HomeScreen extends React.Component{
 
     render(){
         return(
-            <View>
-            {/* <TouchableOpacity
-                onPress={()=> this.props.navigation.navigate('Chat', item)}
-                style={{padding:10,borderBottomColor:'#eaeaea',borderBottomWidth:1}}>
-                <Text style={{fontSize:20}}>Status</Text>
-            </TouchableOpacity> */}
+            // {/* <TouchableOpacity
+            //     onPress={()=> this.props.navigation.navigate('Chat', item)}
+            //     style={{padding:10,borderBottomColor:'#eaeaea',borderBottomWidth:1}}>
+            //     <Text style={{fontSize:20}}>Status</Text>
+            // </TouchableOpacity> */}
 
-                {/* <Text>{User.phone}</Text> */}
-                <TouchableOpacity onPress={this._logOut}>
-                    <Text>Logout</Text>
-                </TouchableOpacity>
+            //     {/* <Text>{User.phone}</Text> */}
+                <View>
+                    <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
+                    <TouchableOpacity onPress={this._status}>
+                            <Text style={{padding:10, fontSize:20,}}>Status</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={this._logOut}>
+                            <Text style={{padding:10, fontSize:20,}}>Logout</Text>
+                        </TouchableOpacity>
+                        
+                    </View>
+
 
                 <FlatList
                 data={this.state.users}
                 renderItem={this.renderRow}
                 keyExtractor={(item)=> item.phone}
                 >
-
                 </FlatList>
             </View>
         )

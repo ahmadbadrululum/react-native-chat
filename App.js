@@ -5,8 +5,9 @@ import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import AuthLoadingScreen from './screens/AuthLoadingScreen';
 import ChatScreen from './screens/ChatScreen';
+import StatusScreen from './screens/StatusScreen';
 
-const AppStack = createStackNavigator({ Home: HomeScreen, Chat: ChatScreen});
+const AppStack = createStackNavigator({ Home: HomeScreen, Chat: ChatScreen, Status: StatusScreen});
 const AuthStack = createStackNavigator({ Login: LoginScreen });
 
 
