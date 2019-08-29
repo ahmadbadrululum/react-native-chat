@@ -44,7 +44,7 @@ export default class LoginScreen extends React.Component {
 
 
     submitForm = () => {
-        if (this.state.phone.length < 10) {
+        if (this.state.phone.length < 5) {
             Alert.alert('Error', 'wrong phone number')
         } else if (this.state.name.length < 3) {
             Alert.alert('Error', 'wrong name')
@@ -60,8 +60,12 @@ export default class LoginScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                <Text style={{
+                padding:10, 
+                fontSize:20
+                }}>Selamat Datang</Text>
                 <TextInput
-                    placeholder="phone"
+                    placeholder="nomor"
                     keyboardType="number-pad"
                     style={styles.input}
                     value={this.state.phone}
@@ -69,7 +73,7 @@ export default class LoginScreen extends React.Component {
                 />
 
                 <TextInput
-                    placeholder="name"
+                    placeholder="nama"
                     style={styles.input}
                     value={this.state.name}
                     onChangeText={this.handleChange('name')}
@@ -77,7 +81,7 @@ export default class LoginScreen extends React.Component {
                 <TouchableOpacity
                     onPress={this.submitForm}
                 >
-                    <Text>enter</Text>
+                    <Text>LOGIN</Text>
                 </TouchableOpacity>
 
 
